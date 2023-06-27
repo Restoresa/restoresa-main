@@ -100,6 +100,10 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ## Simple build for production
 
     $ npm build /(or)/ yarn build
+
+## Docker image build for fast and light usage
+    $ docker build -t restoresa .
+    $ docker run -p 443:443 -p 80:80  restoresa:latest
 # Using the project
 ### Starting off
 upon running the project you can choose to
