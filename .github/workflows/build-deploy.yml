@@ -32,5 +32,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: nojussta/${{ env.REPO }}:${{ github.sha }}
+          image: nojussta/restoresa-frontend
+          tags: "${{ env.REPO }}:${{ github.sha }}"
           labels: ${{ steps.meta.outputs.labels }}
