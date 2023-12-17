@@ -59,9 +59,6 @@ function Header() {
 
         {!isMobileSize(screen, "md") && (
           <CombinedSection>
-            <Anchor href={"/foods"}>
-              <Text active={isAnchorActive("/foods")}>Foods</Text>
-            </Anchor>
             <Anchor href={"/restaurants"}>
               <Text active={isAnchorActive("/restaurants")}>Restaurants</Text>
             </Anchor>
