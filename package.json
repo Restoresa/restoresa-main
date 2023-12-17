@@ -19,7 +19,7 @@
     "axios": "^1.6.0",
     "firebase": "^9.17.2",
     "formik": "^2.2.9",
-    "framer-motion": "^10.12.7",
+    "framer-motion": "^10.16.16",
     "imagekitio-react": "^2.0.0",
     "js-alert": "^2.0.0",
     "moment": "^2.29.4",
