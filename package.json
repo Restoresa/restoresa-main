@@ -1,6 +1,7 @@
 {
   "name": "restoresa-app",
   "version": "0.2.6",
+  "homepage": "https://restoresa.github.io/restoresa-main",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -46,7 +47,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -65,5 +68,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
