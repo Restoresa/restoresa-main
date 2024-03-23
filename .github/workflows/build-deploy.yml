@@ -10,6 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout vars
+        run: |
+          echo "This is github.actor: ${{ github.actor}}"
+          echo "This is GITHUB.ACTOR: ${{ GITHUB.ACTOR}}"
+
       - name: Check out the repo
         if: github.actor != 'dependabot[bot]'
         uses: actions/checkout@v4
