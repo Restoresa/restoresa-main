@@ -13,7 +13,7 @@ jobs:
       - name: Checkout vars
         run: |
           echo "This is github.actor: ${{ github.actor}}"
-          echo "This is GITHUB.ACTOR: ${{ GITHUB.ACTOR}}"
+          echo "This is github.triggering_actor: ${{ github.triggering_actor}}"
 
       - name: Check out the repo
         if: github.actor != 'dependabot[bot]'
