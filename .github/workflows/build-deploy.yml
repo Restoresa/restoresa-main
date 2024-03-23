@@ -10,24 +10,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout vars
-        run: |
-          echo "This is github.actor: ${{ github.actor}}"
-          echo "This is github.triggering_actor: ${{ github.triggering_actor}}"
-
       - name: Check out the repo
-        if: github.actor != 'dependabot[bot]'
+        if: github.triggering_actor != 'dependabot[bot]'
         uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
-        if: github.actor != 'dependabot[bot]'
+        if: github.triggering_actor != 'dependabot[bot]'
         uses: docker/login-action@e92390c5fb421da1463c202d546fed0ec5c39f20
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Extract metadata (tags, labels) for Docker
-        if: github.actor != 'dependabot[bot]'
+        if: github.triggering_actor != 'dependabot[bot]'
         id: meta
         uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81
         with:
@@ -35,7 +30,7 @@ jobs:
           tags: v1.${{ github.run_number}}
 
       - name: Build and push Docker image
-        if: github.actor != 'dependabot[bot]'
+        if: github.triggering_actor != 'dependabot[bot]'
         uses: docker/build-push-action@af5a7ed5ba88268d5278f7203fb52cd833f66d6e
         with:
           context: .
