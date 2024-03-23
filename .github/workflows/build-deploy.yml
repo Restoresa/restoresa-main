@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Check ref name
+        run: echo "${{ github.ref_name }}"
+
       - name: Check out the repo
         if: github.triggering_actor != 'dependabot[bot]'
         uses: actions/checkout@v4
