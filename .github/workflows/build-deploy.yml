@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check ref name
-        run: echo "${{ github.ref_name }}"
+        run: |
+          echo "${{ github.ref_name }}"
+          echo "${{ github.event.pull_request.head.ref }}"
 
       - name: Check out the repo
         if: github.triggering_actor != 'dependabot[bot]'
