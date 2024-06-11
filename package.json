@@ -17,7 +17,7 @@
     "@testing-library/react": "^15.0.6",
     "@testing-library/user-event": "^14.5.2",
     "axios": "^1.6.8",
-    "firebase": "^9.23.0",
+    "firebase": "^10.12.2",
     "formik": "^2.4.6",
     "framer-motion": "^11.1.7",
     "imagekitio-react": "^4.0.0",
